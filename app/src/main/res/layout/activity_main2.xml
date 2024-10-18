@@ -7,4 +7,94 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <Button
+        android:id="@+id/YESb"
+        android:layout_width="284dp"
+        android:layout_height="92dp"
+        android:backgroundTint="#4CAF50"
+        android:text="ОПЛАТИТЬ"
+        android:textColorLink="#00FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641" />
+
+    <Button
+        android:id="@+id/NOb"
+        android:layout_width="290dp"
+        android:layout_height="85dp"
+        android:backgroundTint="#E91E63"
+        android:text="ОТМЕНА"
+        android:textColorLink="#00FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.854" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="294dp"
+        android:layout_height="51dp"
+        android:text="К оплате:"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="294dp"
+        android:layout_height="51dp"
+        android:text="рублей"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
+
+    <TextView
+        android:id="@+id/SaleSize"
+        android:layout_width="294dp"
+        android:layout_height="51dp"
+        android:text="(С учетом скидки в -%)"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <TextView
+        android:id="@+id/PaymentSize"
+        android:layout_width="315dp"
+        android:layout_height="85dp"
+        android:text="-----"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.205" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

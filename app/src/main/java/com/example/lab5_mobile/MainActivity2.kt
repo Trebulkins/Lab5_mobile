@@ -1,6 +1,8 @@
 package com.example.lab5_mobile
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,16 @@ class MainActivity2 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val saleSize = intent.getIntExtra("SaleSize", 0)
+        val hours = intent.getIntExtra("Hours", 0)
+
+        val buttonY = findViewById<Button>(R.id.YESb);
+        val buttonN = findViewById<Button>(R.id.NOb);
+
+        val saleText = findViewById<TextView>(R.id.SaleSize);
+        val paymentText = findViewById<TextView>(R.id.PaymentSize);
+
+
     }
 }

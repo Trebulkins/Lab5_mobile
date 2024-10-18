@@ -1,9 +1,10 @@
 package com.example.lab5_mobile
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val saleBar = findViewById<SeekBar>(R.id.Sale_bar);
         val saleView = findViewById<TextView>(R.id.textView4);
         saleView.text = "Скидка: 0";
-
+        val nextAct = findViewById<Button>(R.id.button)
 
         if (savedInstanceState != null) {
             saleSize = savedInstanceState.getInt("SaleSize", 0)
@@ -47,6 +48,14 @@ class MainActivity : AppCompatActivity() {
                 saleSize = seek.progress;
             }
         })
+
+        nextAct.setOnClickListener {
+            timeHours = timeInput.text.toString().toInt()
+            val intent = Intent(this@MainActivity, MainActivity2::class.java)
+            intent.putExtra("SaleSize", saleSize)
+            intent.putExtra("Hours", timeHours)
+            startActivity(intent)
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
