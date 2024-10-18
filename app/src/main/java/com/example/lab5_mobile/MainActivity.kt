@@ -8,10 +8,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
     var saleSize = 0
+    var timeHours = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val timeInput = findViewById<TextInputEditText>(R.id.Time_input);
         val saleBar = findViewById<SeekBar>(R.id.Sale_bar);
         val saleView = findViewById<TextView>(R.id.textView4);
         saleView.text = "Скидка: 0";
@@ -30,6 +33,8 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState != null) {
             saleSize = savedInstanceState.getInt("SaleSize", 0)
+            saleView.text = "Скидка: " + saleSize.toString() + "%";
+            timeHours = savedInstanceState.getInt("Hours", 0)
         }
 
 
@@ -47,5 +52,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("SaleSize", saleSize)
+        outState.putInt("Hours", timeHours)
     }
 }
