@@ -83,7 +83,7 @@
         android:id="@+id/Sale_bar"
         android:layout_width="299dp"
         android:layout_height="47dp"
-        android:max="100"
+        android:max="50"
         android:progress="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

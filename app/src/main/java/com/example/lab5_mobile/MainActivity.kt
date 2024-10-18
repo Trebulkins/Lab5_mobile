@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -50,11 +51,18 @@ class MainActivity : AppCompatActivity() {
         })
 
         nextAct.setOnClickListener {
-            timeHours = timeInput.text.toString().toInt()
-            val intent = Intent(this@MainActivity, MainActivity2::class.java)
-            intent.putExtra("SaleSize", saleSize)
-            intent.putExtra("Hours", timeHours)
-            startActivity(intent)
+            val a = timeInput.text.toString().toIntOrNull()
+            if (a != null) {
+                if (a > 0){
+                    timeHours = a
+                    val intent = Intent(this@MainActivity, MainActivity2::class.java)
+                    intent.putExtra("SaleSize", saleSize)
+                    intent.putExtra("Hours", timeHours)
+                    startActivity(intent)
+                }
+                else Toast.makeText(this, "Введите целочисленное положительное число часов!", Toast.LENGTH_SHORT).show()
+            }
+            else Toast.makeText(this, "Введите число часов!", Toast.LENGTH_SHORT).show()
         }
     }
 

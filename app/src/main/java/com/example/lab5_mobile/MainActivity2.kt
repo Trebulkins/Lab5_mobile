@@ -30,7 +30,7 @@ class MainActivity2 : AppCompatActivity() {
         val paymentText = findViewById<TextView>(R.id.PaymentSize);
 
         saleText.text = "(С учетом скидки в ${saleSize}%)"
-        paymentText.text = (hours * 2000 - (hours * 2000 * (saleSize / 100))).toString()
+        paymentText.text = (hours * (2000 - 20 * saleSize)).toString()
 
         buttonY.setOnClickListener {
             Toast.makeText(this, "Поздравляем с оплатой!", Toast.LENGTH_SHORT).show()
