@@ -3,6 +3,7 @@ package com.example.lab5_mobile
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +29,15 @@ class MainActivity2 : AppCompatActivity() {
         val saleText = findViewById<TextView>(R.id.SaleSize);
         val paymentText = findViewById<TextView>(R.id.PaymentSize);
 
+        saleText.text = "(С учетом скидки в ${saleSize}%)"
+        paymentText.text = (hours * 2000 - (hours * 2000 * (saleSize / 100))).toString()
 
+        buttonY.setOnClickListener {
+            Toast.makeText(this, "Поздравляем с оплатой!", Toast.LENGTH_SHORT).show()
+        }
+
+        buttonN.setOnClickListener {
+            finish()
+        }
     }
 }
