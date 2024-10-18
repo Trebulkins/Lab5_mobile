@@ -3,12 +3,16 @@ package com.example.lab5_mobile
 import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    var saleSize = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,9 +23,29 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val SaleBar = findViewById<SeekBar>(R.id.Sale_bar);
+        val saleBar = findViewById<SeekBar>(R.id.Sale_bar);
+        val saleView = findViewById<TextView>(R.id.textView4);
+        saleView.text = "Скидка: 0";
 
-        val SaleView = findViewById<TextView>(R.id.textView4);
-        SaleView.text = "Скидка :";
+
+        if (savedInstanceState != null) {
+            saleSize = savedInstanceState.getInt("SaleSize", 0)
+        }
+
+
+        saleBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seek: SeekBar, progress: Int, fromUser: Boolean) {
+                saleView.text = "Скидка: " + seek.progress.toString() + "%";
+            }
+            override fun onStartTrackingTouch(seek: SeekBar) {}
+            override fun onStopTrackingTouch(seek: SeekBar) {
+                saleSize = seek.progress;
+            }
+        })
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("SaleSize", saleSize)
     }
 }
